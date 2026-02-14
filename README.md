@@ -69,7 +69,13 @@ For advanced users who want to customize:
 
 ## 📸 Screenshots
 
-> **Note**: Add screenshots of your theme in action here! Show both light and dark modes, highlighting key features like tags, bullet points, and the overall aesthetic.
+### Light Mode - "Cloud Dancer"
+![Biolume 26 Light Mode](./screenshots/screenshot-light.png)
+
+### Dark Mode - "Midnight Biolume"
+![Biolume 26 Dark Mode](./screenshots/screenshot-dark.png)
+
+The screenshots showcase the theme's key features including typography hierarchy, syntax highlighting, task management, tags, and the distinctive color palette in both modes.
 
 ## 🤝 Contributing
 
