@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="dark-theme">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biolume 26 Theme Preview</title>
+    <link rel="stylesheet" href="custom.css">
+    <style>
+        /* Mock Logseq Structure for Preview */
+        body {
+            /* Now handled by custom.css directly */
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .preview-controls {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid var(--ls-border-color);
+            border-radius: 8px;
+            background-color: var(--ls-secondary-background-color);
+        }
+
+        button {
+            padding: 8px 16px;
+            border: 1px solid var(--ct-primary-color);
+            background: transparent;
+            color: var(--ct-primary-color);
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: var(--biolume-font-body);
+        }
+
+        button:hover {
+            background: var(--ct-primary-color);
+            color: var(--ls-primary-background-color);
+        }
+
+        .page {
+            margin-top: 2rem;
+        }
+
+        .block-h1 {
+            font-family: var(--biolume-font-heading);
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--ct-primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .block-h2 {
+            font-family: var(--biolume-font-heading);
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        .bullet-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .bullet {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-top: 8px;
+            margin-right: 10px;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .content {
+            line-height: 1.6;
+        }
+
+        .tag {
+            cursor: pointer;
+        }
+
+        .highlight {
+            background-color: var(--ct-highlight-color);
+            padding: 0 2px;
+        }
+
+        a {
+            color: var(--ls-link-text-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--ls-link-text-hover-color);
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8em;
+            color: var(--ls-secondary-text-color);
+            opacity: 0.7;
+        }
+    </style>
+    <script>
+        function setLight() {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.classList.add('white-theme');
+            document.documentElement.classList.remove('dark-theme');
+        }
+        function setDark() {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.classList.add('dark-theme');
+            document.documentElement.classList.remove('white-theme');
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="preview-controls">
+        <h3 style="margin-top:0">Theme Preview: Biolume 26 Theme</h3>
+        <button onclick="setLight()">Light Mode</button>
+        <button onclick="setDark()">Dark Mode</button>
+    </div>
+
+    <div class="page">
+        <div class="block-h1">Journal: Feb 3rd, 2026</div>
+
+        <div class="bullet-container">
+            <div class="bullet"></div>
+            <div class="content">
+                Checking the new branding for <strong>Biolume 26 Theme</strong>.
+            </div>
+        </div>
+
+        <div class="bullet-container">
+            <div class="bullet"></div>
+            <div class="content">
+                Things to do:
+                <br>
+                <input type="checkbox" class="form-checkbox" checked> <span
+                    style="text-decoration: line-through; opacity: 0.6;">Rename Package</span>
+                <br>
+                <input type="checkbox" class="form-checkbox" checked> <span
+                    style="text-decoration: line-through; opacity: 0.6;">Add Copyright for Martin Möller</span>
+                <br>
+                <input type="checkbox" class="form-checkbox" checked> <span
+                    style="text-decoration: line-through; opacity: 0.6;">Add Email: moellervdm@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Martin Möller (moellervdm@gmail.com)
+    </footer>
+
+</body>
+
+</html>

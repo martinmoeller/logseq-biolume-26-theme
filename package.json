@@ -1,0 +1,39 @@
+{
+  "name": "logseq-biolume-26-theme",
+  "version": "1.0.1",
+  "description": "A hip and stylish 2026 theme for Logseq featuring Digital Flora and Electric Bioluminescence aesthetics.",
+  "author": "Martin Möller <moellervdm@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinmoeller/logseq-biolume-26-theme.git"
+  },
+  "logseq": {
+    "id": "logseq-biolume-26-theme",
+    "title": "Biolume 26 Theme",
+    "icon": "./icon.svg",
+    "themes": [
+      {
+        "name": "Biolume 26 Light",
+        "url": "./theme-light.css",
+        "mode": "light",
+        "description": "A futuristic organic light theme with Deep Teal and Coral accents."
+      },
+      {
+        "name": "Biolume 26 Dark",
+        "url": "./theme-dark.css",
+        "mode": "dark",
+        "description": "A high-contrast bioluminescent dark theme with Neo-Mint and Electric Violet accents."
+      }
+    ]
+  },
+  "keywords": [
+    "logseq",
+    "theme",
+    "2026",
+    "biolume",
+    "bioluminescence",
+    "futuristic",
+    "organic"
+  ]
+}
