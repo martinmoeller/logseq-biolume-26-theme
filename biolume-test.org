@@ -15,6 +15,20 @@ function greet(name) {
   return `Hello, ${name}!` + version + true;
 }
 #+END_SRC
+** Weitere Sprachen
+#+BEGIN_SRC python
+# Python: Kommentar, Schlüsselwort, String, Zahl
+def calculate_bioluminescence(intensity):
+    """Calculate the glow effect"""
+    return intensity * 2.5
+#+END_SRC
+#+BEGIN_SRC css
+/* CSS: Eigenschaften und Werte */
+.biolume-theme {
+  --primary-color: #00FFC2;
+  font-family: 'Outfit', sans-serif;
+}
+#+END_SRC
 ** Inline-Code: ~const theme = "Biolume 26"~
 *** Erwartet: mint auf dunklem Teal (Dark) bzw. koralle auf Grau (Light)
 
@@ -86,3 +100,45 @@ Digital Flora meets Electric Bioluminescence.
 *** Erwartet: Auswahl in Akzentfarbe statt System-Blau
 ** Scrollbalken
 *** Erwartet: schmal, in Rahmenfarbe, beim Überfahren Akzentfarbe (Seite ggf. schmaler machen, damit gescrollt werden kann)
+
+* 9. Weitere Logseq-Elemente (Gegenprobe)
+** Erwartet: alles gut lesbar und farblich stimmig – hier gibt es kein eigenes Styling, nur die Theme-Farben
+** Textformatierung: *fett*, /kursiv/, +durchgestrichen+, _unterstrichen_
+** Nummerierte Liste
+*** Erster Punkt
+:PROPERTIES:
+:logseq.order-list-type: number
+:END:
+*** Zweiter Punkt
+:PROPERTIES:
+:logseq.order-list-type: number
+:END:
+** Prioritäten
+*** TODO [#A] Hohe Priorität
+*** TODO [#B] Mittlere Priorität
+*** TODO [#C] Niedrige Priorität
+** Termine
+*** TODO Geplante Aufgabe
+SCHEDULED: <2026-10-01 Thu>
+*** TODO Aufgabe mit Frist
+DEADLINE: <2026-10-15 Thu>
+** Eigenschaften
+:PROPERTIES:
+:theme-name: Biolume 26
+:version: 1.1.0
+:status: Released
+:END:
+** Externer Link: [[https://logseq.com][Logseq Website]]
+** Formeln: $$E = mc^2$$ und inline $f(x) = x^2 + 2x + 1$
+** Hinweisblöcke
+#+BEGIN_NOTE
+Ein Hinweisblock (NOTE).
+#+END_NOTE
+#+BEGIN_TIP
+Ein Tipp-Block (TIP).
+#+END_TIP
+#+BEGIN_WARNING
+Ein Warnblock (WARNING).
+#+END_WARNING
+** Trennlinie
+-----
