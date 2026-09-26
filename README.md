@@ -2,8 +2,6 @@
 
 A hip and stylish Logseq theme designed for 2026, blending **Digital Flora** aesthetics with **Electric Bioluminescence** to create a workspace that feels both organic and futuristic.
 
-![Biolume 26 Theme Banner](https://via.placeholder.com/800x200/051419/00FFC2?text=Biolume+26+Theme)
-
 ## ✨ Features
 
 ### 🎨 Two Beautiful Modes
@@ -18,11 +16,24 @@ A hip and stylish Logseq theme designed for 2026, blending **Digital Flora** aes
 
 ### 🌟 Design Highlights
 
-- **Glowing bullet points** in dark mode with bioluminescent effects
+- **Glowing bullet points** in dark mode that light up on hover
 - **Neon-bordered tags** with hover animations
-- **Smooth transitions** throughout the interface
-- **Enhanced readability** with carefully selected color contrasts
-- **Modern UI polish** for a 2026 aesthetic
+- **Themed code blocks** with a matching syntax palette
+- **Colored task markers** (TODO/LATER, NOW/DOING, WAITING)
+- **Accent details**: text selection, scrollbars, highlights, quotes, active block
+- **Readable contrasts** in light mode and respect for `prefers-reduced-motion`
+
+### 🎛️ Customizing
+
+All design decisions are exposed as `--biolume-*` variables (radius, glow, tag and code colors).
+Override them in your `logseq/custom.css`, e.g.:
+
+```css
+html[data-theme='dark'] {
+  --biolume-radius: 10px;
+  --biolume-glow-strong: 0 0 16px #00FFC2;
+}
+```
 
 ## 📦 Installation
 

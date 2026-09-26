@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biolume 26 Theme Preview</title>
-    <link rel="stylesheet" href="custom.css">
+    <link id="theme-css" rel="stylesheet" href="theme-dark.css">
     <style>
         /* Mock Logseq Structure for Preview */
         body {
-            /* Now handled by custom.css directly */
             padding: 2rem;
             max-width: 800px;
             margin: 0 auto;
@@ -96,6 +95,48 @@
             text-decoration: underline;
         }
 
+        /* Mimic Logseq's own use of its variables */
+        .form-checkbox {
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            border: 1px solid;
+            vertical-align: -2px;
+        }
+
+        mark {
+            background-color: var(--ls-page-mark-bg-color);
+            color: var(--ls-page-mark-color);
+            padding: 0 2px;
+            border-radius: 3px;
+        }
+
+        code {
+            background-color: var(--ls-page-inline-code-bg-color);
+            color: var(--ls-page-inline-code-color);
+            padding: 1px 4px;
+            border-radius: 4px;
+        }
+
+        blockquote {
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            border-left: solid var(--ls-page-blockquote-border-color);
+            background-color: var(--ls-page-blockquote-bg-color);
+        }
+
+        .CodeMirror {
+            font-family: monospace;
+            padding: 0.75rem 1rem;
+            white-space: pre;
+            border: 1px solid;
+        }
+
+        .block-marker {
+            font-weight: 600;
+            margin-right: 4px;
+        }
+
         footer {
             margin-top: 3rem;
             font-size: 0.8em;
@@ -104,15 +145,10 @@
         }
     </style>
     <script>
-        function setLight() {
-            document.documentElement.setAttribute('data-theme', 'light');
-            document.documentElement.classList.add('white-theme');
-            document.documentElement.classList.remove('dark-theme');
-        }
-        function setDark() {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            document.documentElement.classList.add('dark-theme');
-            document.documentElement.classList.remove('white-theme');
+        function setTheme(mode) {
+            document.documentElement.setAttribute('data-theme', mode);
+            document.documentElement.className = mode === 'dark' ? 'dark-theme' : 'white-theme';
+            document.getElementById('theme-css').href = 'theme-' + mode + '.css';
         }
     </script>
 </head>
@@ -121,8 +157,8 @@
 
     <div class="preview-controls">
         <h3 style="margin-top:0">Theme Preview: Biolume 26 Theme</h3>
-        <button onclick="setLight()">Light Mode</button>
-        <button onclick="setDark()">Dark Mode</button>
+        <button onclick="setTheme('light')">Light Mode</button>
+        <button onclick="setTheme('dark')">Dark Mode</button>
     </div>
 
     <div class="page">
@@ -148,6 +184,32 @@
                 <br>
                 <input type="checkbox" class="form-checkbox" checked> <span
                     style="text-decoration: line-through; opacity: 0.6;">Add Email: moellervdm@gmail.com</span>
+            </div>
+        </div>
+
+        <div class="bullet-container">
+            <div class="bullet"></div>
+            <div class="content">
+                <span class="block-marker LATER">LATER</span> Review <a class="tag">#design</a> and <a class="tag">#logseq</a>
+                <br>
+                <span class="block-marker NOW">NOW</span> Polish <a href="#">Biolume Palette</a> with <mark>highlighted notes</mark>
+                <br>
+                <span class="block-marker WAITING">WAITING</span> Feedback on <span class="block-ref">block reference</span>
+                <br>
+                <input type="checkbox" class="form-checkbox"> Open task
+            </div>
+        </div>
+
+        <div class="bullet-container">
+            <div class="bullet"></div>
+            <div class="content" style="flex:1">
+                <blockquote>Digital Flora meets Electric Bioluminescence.</blockquote>
+                Inline code: <code>const theme = "Biolume 26"</code>
+                <div class="extensions__code"><div class="CodeMirror"><span class="cm-comment">// JavaScript code block</span>
+<span class="cm-keyword">function</span> <span class="cm-def">greet</span>(name) {
+  console.<span class="cm-property">log</span>(<span class="cm-string">`Hello, ${name}!`</span>, <span class="cm-number">26</span>);
+  <span class="cm-keyword">return</span> <span class="cm-atom">true</span>;
+}</div></div>
             </div>
         </div>
     </div>

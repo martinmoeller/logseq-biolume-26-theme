@@ -21,3 +21,6 @@ dist/
 *.tmp
 *.swp
 *~
+
+# Windows
+desktop.ini

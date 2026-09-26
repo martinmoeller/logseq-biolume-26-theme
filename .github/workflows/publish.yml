@@ -13,37 +13,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Create release package
-        run: |
-          mkdir -p release
-          cp package.json release/
-          cp *.css release/ 2>/dev/null || true
-          cp *.png release/ 2>/dev/null || true
-          cp *.svg release/ 2>/dev/null || true
-          cp README.md release/ 2>/dev/null || true
-          cp LICENSE release/ 2>/dev/null || true
-          cd release
-          zip -r ../logseq-biolume-26-theme.zip .
+        run: zip -j logseq-biolume-26-theme.zip package.json theme-light.css theme-dark.css icon.svg README.md LICENSE
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+      - name: Create release with package
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./logseq-biolume-26-theme.zip
-          asset_name: logseq-biolume-26-theme.zip
-          asset_content_type: application/zip
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" logseq-biolume-26-theme.zip --title "Release $GITHUB_REF_NAME" --generate-notes

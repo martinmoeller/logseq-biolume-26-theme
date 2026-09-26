@@ -1,55 +1,80 @@
 /*
-  Theme Name: Biolume 26 Theme - Light Mode
+  Theme Name: Biolume 26 Theme - Light Mode "Cloud Dancer"
   Author: Martin Möller <moellervdm@gmail.com>
   Copyright: (c) 2026 Martin Möller
-  Description: A hip and stylish 2026 theme for Logseq - Light Mode "Cloud Dancer"
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Space+Grotesk:wght@600&display=swap');
 
-:root {
-  /* -- Biolume 26 Palette Common -- */
-  --biolume-font-heading: 'Space Grotesk', sans-serif;
-  --biolume-font-body: 'Outfit', sans-serif;
-}
-
-/* Light Theme Variables */
 html[data-theme='light'],
 .white-theme,
 .light-theme {
-  --ct-primary-color: #008080 !important;
-  /* Deep Teal */
-  --ct-secondary-color: #FF6B6B !important;
-  /* Coral */
+  /* -- Biolume tokens (override these in your custom.css) -- */
+  --biolume-font-heading: 'Space Grotesk', sans-serif;
+  --biolume-font-body: 'Outfit', sans-serif;
+  --biolume-radius: 6px;
+  --biolume-speed: 0.2s;
+  --biolume-glow: 0 0 0 transparent;
+  --biolume-glow-strong: 0 0 0 3px rgba(0, 128, 128, 0.18);
+  --biolume-tag-text: #BF3F3F;                  /* Coral, darkened for contrast */
+  --biolume-tag-bg: #FFF0F0;
+  --biolume-tag-border: transparent;
+  --biolume-code-bg: #F0F2F5;
+  --biolume-code-comment: #7A8A8E;
+  --biolume-code-keyword: #B03A3A;
+  --biolume-code-string: #007373;
+  --biolume-code-number: #A35F00;
+  --biolume-code-def: #1F6F8B;
+  --biolume-checkbox-bg: #FFFFFF;
+  --biolume-checkbox-border: #008080;
+  --biolume-check-icon: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+
+  --ct-primary-color: #008080 !important;       /* Deep Teal */
+  --ct-secondary-color: #FF6B6B !important;     /* Coral */
   --ct-warning-color: #FF9F1C !important;
   --ct-success-color: #2EC4B6 !important;
   --ct-highlight-color: #CBF3F0 !important;
-  /* Mintish highlight */
 
-  --ls-primary-background-color: #F5F7FA !important;
-  /* Cloud Dancer */
+  --ls-primary-background-color: #F5F7FA !important; /* Cloud Dancer */
   --ls-secondary-background-color: #FFFFFF !important;
   --ls-tertiary-background-color: #E6E9ED !important;
   --ls-quaternary-background-color: #F0F2F5 !important;
 
-  --ls-primary-text-color: #2D3436 !important;
-  /* Charcoal */
+  --ls-primary-text-color: #2D3436 !important;  /* Charcoal */
   --ls-secondary-text-color: #636E72 !important;
 
   --ls-border-color: #DDE1E7 !important;
   --ls-menu-hover-color: #E0F7F6 !important;
 
-  --ls-link-text-color: #008080 !important;
+  --ls-link-text-color: #007373 !important;
   --ls-link-text-hover-color: #005F5F !important;
 
   --ls-active-primary-color: #008080 !important;
   --ls-active-secondary-color: #FF6B6B !important;
 
-  --ls-block-bullet-color: #2D3436 !important;
+  --ls-block-bullet-color: #4F8F8F !important;
   --ls-block-bullet-border-color: #DDE1E7 !important;
+  --ls-guideline-color: #CFE3E3 !important;
+
+  --ls-page-mark-bg-color: #CBF3F0 !important;
+  --ls-page-mark-color: #2D3436 !important;
+  --ls-page-inline-code-bg-color: #E6E9ED !important;
+  --ls-page-inline-code-color: #B03A3A !important;
+  --ls-page-blockquote-bg-color: #FFFFFF !important;
+  --ls-page-blockquote-border-color: #008080 !important;
+  --ls-table-tr-even-background-color: #F0F2F5 !important;
+  --ls-page-checkbox-color: #008080 !important;
+  --ls-page-checkbox-border-color: #008080 !important;
+
+  --ls-selection-background-color: rgba(0, 128, 128, 0.18) !important;
+  --ls-selection-text-color: #2D3436 !important;
+  --ls-scrollbar-foreground-color: #CDD3DA !important;
+  --ls-scrollbar-background-color: transparent !important;
+  --ls-scrollbar-thumb-hover-color: #008080 !important;
 }
 
-/* --- Core Typography --- */
+/* --- Shared rules (identical in theme-dark.css) --- */
+
 html,
 body {
   font-family: var(--biolume-font-body) !important;
@@ -57,28 +82,54 @@ body {
   color: var(--ls-primary-text-color) !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.ls-block-h1,
-.ls-block-h2,
-.ls-block-h3 {
+h1, h2, h3, h4, h5, h6,
+.ls-block-h1, .ls-block-h2, .ls-block-h3 {
   font-family: var(--biolume-font-heading) !important;
   font-weight: 600 !important;
+  letter-spacing: -0.01em;
 }
 
-/* --- UI Polish --- */
+::selection {
+  background-color: var(--ls-selection-background-color);
+  color: var(--ls-selection-text-color);
+}
 
-/* Sidebar */
+::-webkit-scrollbar-thumb {
+  background-color: var(--ls-scrollbar-foreground-color);
+  border-radius: var(--biolume-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ls-scrollbar-thumb-hover-color);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ct-primary-color);
+  outline-offset: 2px;
+}
+
 .left-sidebar-inner {
   background-color: var(--ls-secondary-background-color) !important;
   border-right: 1px solid var(--ls-border-color) !important;
 }
 
-/* Block References */
+/* Bullets: calm at rest, glow on hover */
+.bullet-container .bullet {
+  background-color: var(--ls-block-bullet-color) !important;
+  box-shadow: var(--biolume-glow);
+  transition: box-shadow var(--biolume-speed) ease;
+}
+
+.bullet-container:hover .bullet {
+  box-shadow: var(--biolume-glow-strong);
+}
+
+/* Block being edited */
+.editor-inner textarea {
+  box-shadow: -6px 0 0 -4px var(--ct-primary-color);
+}
+
 .block-ref {
   border-bottom: 1px dashed var(--ct-secondary-color);
   padding: 0 4px;
@@ -90,23 +141,21 @@ h6,
   color: var(--ct-primary-color);
 }
 
-/* Tags */
 a.tag {
-  background-color: var(--ls-tertiary-background-color);
+  background-color: var(--biolume-tag-bg);
+  border: 1px solid var(--biolume-tag-border);
   padding: 2px 6px;
-  border-radius: 6px;
-  color: var(--ct-secondary-color) !important;
+  border-radius: var(--biolume-radius);
+  color: var(--biolume-tag-text) !important;
   font-weight: 500;
-  border: 1px solid transparent;
-  transition: all 0.2s ease;
+  transition: background-color var(--biolume-speed) ease, color var(--biolume-speed) ease;
 }
 
 a.tag:hover {
-  background-color: var(--ct-secondary-color);
+  background-color: var(--biolume-tag-text);
   color: var(--ls-primary-background-color) !important;
 }
 
-/* Page Title */
 .title {
   color: var(--ct-primary-color) !important;
   font-size: 2.2em;
@@ -114,11 +163,73 @@ a.tag:hover {
 
 /* Checkboxes */
 .form-checkbox {
+  border: 1.5px solid var(--biolume-checkbox-border) !important;
   border-radius: 4px;
-  border-color: var(--ct-primary-color) !important;
+}
+
+.form-checkbox:not(:checked) {
+  background-color: var(--biolume-checkbox-bg) !important;
 }
 
 .form-checkbox:checked {
   background-color: var(--ct-primary-color) !important;
-  border-color: var(--ct-primary-color) !important;
+  background-image: var(--biolume-check-icon) !important;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Task markers */
+.block-marker,
+.marker-switch {
+  font-family: var(--biolume-font-heading);
+  letter-spacing: 0.04em;
+}
+
+.block-marker.TODO,
+.block-marker.LATER {
+  color: var(--ct-primary-color);
+}
+
+.block-marker.DOING,
+.block-marker.NOW {
+  color: var(--ct-warning-color);
+}
+
+.block-marker.WAITING {
+  color: var(--ct-secondary-color);
+}
+
+/* Code blocks */
+.extensions__code,
+.CodeMirror,
+.CodeMirror-gutters {
+  background-color: var(--biolume-code-bg) !important;
+  border-color: var(--ls-border-color) !important;
+}
+
+.extensions__code {
+  border-radius: var(--biolume-radius);
+}
+
+.CodeMirror .cm-comment { color: var(--biolume-code-comment) !important; }
+.CodeMirror .cm-keyword { color: var(--biolume-code-keyword) !important; }
+.CodeMirror .cm-string,
+.CodeMirror .cm-string-2 { color: var(--biolume-code-string) !important; }
+.CodeMirror .cm-number,
+.CodeMirror .cm-atom { color: var(--biolume-code-number) !important; }
+.CodeMirror .cm-def,
+.CodeMirror .cm-property { color: var(--biolume-code-def) !important; }
+
+/* Quotes */
+blockquote {
+  border-left-width: 3px !important;
+  border-radius: 0 var(--biolume-radius) var(--biolume-radius) 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.tag,
+  .bullet-container .bullet {
+    transition: none !important;
+  }
 }

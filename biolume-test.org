@@ -1,0 +1,88 @@
+#+TITLE: Biolume 26 Theme Test
+
+* Anleitung
+** Diese Seite in beiden Modi ansehen (Biolume 26 Light und Biolume 26 Dark, Tastenkürzel =t i=)
+** Unter jedem Abschnitt steht *Erwartet:* – stimmt es nicht, bitte Screenshot machen
+
+* 1. Codeblöcke
+** Erwartet: Hintergrund teal-dunkel (Dark) bzw. hellgrau (Light), passend zur Palette – nicht neutral grau. Kommentare gedämpft, Schlüsselwörter violett/koralle, Strings mint/teal, Zahlen gelb/ocker
+** Beispielcode
+#+BEGIN_SRC javascript
+// Kommentar: sollte gedämpft sein
+const theme = "Biolume 26";
+function greet(name) {
+  const version = 26;
+  return `Hello, ${name}!` + version + true;
+}
+#+END_SRC
+** Inline-Code: ~const theme = "Biolume 26"~
+*** Erwartet: mint auf dunklem Teal (Dark) bzw. koralle auf Grau (Light)
+
+* 2. Aufgaben-Marker
+** Erwartet: TODO/LATER in Primärfarbe (mint/teal), NOW/DOING gelb/orange, WAITING violett/koralle
+** TODO Eine offene Aufgabe (TODO)
+** LATER Eine Aufgabe für später (LATER)
+** NOW Eine laufende Aufgabe (NOW)
+** DOING Eine laufende Aufgabe (DOING)
+** WAITING Eine wartende Aufgabe (WAITING)
+** DONE Eine erledigte Aufgabe (DONE)
+** CANCELED Eine abgebrochene Aufgabe (CANCELED)
+
+* 3. Checkboxen
+** Erwartet: offene Boxen transparent mit Rand in Akzentfarbe (nicht grau gefüllt), abgehakte Boxen gefüllt in Akzentfarbe
+** TODO Offene Checkbox
+** DONE Abgehakte Checkbox
+
+* 4. Bearbeiteter Block
+** Erwartet: In diesen Block klicken – links erscheint eine feine Linie in der Akzentfarbe, der Text verrutscht nicht
+** Hier zum Testen hineinklicken und tippen
+
+* 5. Aufzählungspunkte und Einrückungslinien
+** Erwartet: Punkte leuchten im Dark Mode schwach, beim Überfahren mit der Maus hell. Im Light Mode gedämpftes Teal mit leichtem Ring beim Überfahren
+*** Ebene 2
+**** Ebene 3
+***** Ebene 4
+*** Erwartet: senkrechte Einrückungslinien leicht in Akzentfarbe getönt
+
+* 6. Tags, Links und Blockreferenzen
+** Tags: #design #theme #logseq #bioluminescence
+*** Erwartet: Dark violett mit Rahmen, Light dunkle Koralle auf zartem Koralle-Grund – gut lesbar. Beim Überfahren farbig gefüllt
+** Links: [[Biolume Palette]] und [[Digital Flora]]
+*** Erwartet: mint (Dark) bzw. dunkles Teal (Light)
+** Referenzierter Block
+:PROPERTIES:
+:ID: 6512f0a0-2026-4000-8000-000000000026
+:END:
+** Blockreferenz: ((6512f0a0-2026-4000-8000-000000000026))
+*** Erwartet: gestrichelte Unterlinie in Sekundärfarbe, Hover mit Hintergrund
+
+* 7. Hervorhebungen, Zitate, Tabellen
+** Text mit ^^Hervorhebung^^ in der Mitte
+*** Erwartet: Hervorhebung zart mint (Dark) bzw. mint-hell (Light)
+** Zitat
+#+BEGIN_QUOTE
+Digital Flora meets Electric Bioluminescence.
+#+END_QUOTE
+*** Erwartet: Linker Rand violett (Dark) bzw. teal (Light), leicht abgerundet
+** Tabelle
+| Modus | Primär    | Sekundär        |
+|-------+-----------+-----------------|
+| Dark  | Neo-Mint  | Electric Violet |
+| Light | Deep Teal | Coral           |
+| Test  | ja        | ja              |
+*** Erwartet: jede zweite Zeile leicht abgesetzt
+
+* 8. Überschriften und Details
+** Überschrift Ebene 2
+:PROPERTIES:
+:heading: 2
+:END:
+** Überschrift Ebene 3
+:PROPERTIES:
+:heading: 3
+:END:
+** Erwartet: Überschriften in Space Grotesk, Fließtext in Outfit, Seitentitel in Akzentfarbe
+** Text markieren (mit der Maus auswählen)
+*** Erwartet: Auswahl in Akzentfarbe statt System-Blau
+** Scrollbalken
+*** Erwartet: schmal, in Rahmenfarbe, beim Überfahren Akzentfarbe (Seite ggf. schmaler machen, damit gescrollt werden kann)
