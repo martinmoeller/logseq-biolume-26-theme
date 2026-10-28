@@ -125,11 +125,6 @@ button:focus-visible {
   box-shadow: var(--biolume-glow-strong);
 }
 
-/* Block being edited */
-.editor-inner textarea {
-  box-shadow: -6px 0 0 -4px var(--ct-primary-color);
-}
-
 .block-ref {
   border-bottom: 1px dashed var(--ct-secondary-color);
   padding: 0 4px;
